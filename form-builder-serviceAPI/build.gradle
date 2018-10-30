@@ -1,0 +1,28 @@
+description = 'Indeed form-builder service'
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+}
+
+apply plugin: 'war'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'com.couchbase.client:java-client:2.7.0'
+
+    providedCompile 'javax:javaee-api:7.0'
+    providedCompile 'org.jboss.resteasy:resteasy-jaxrs:3.6.1.SP2'
+
+    testCompile 'junit:junit:4.12'
+    test 'org.mockito:mockito-all:2.0.2-beta'
+    test 'org.objenesis:objenesis:2.2'
+}
+
+war {
+    archiveName 'form-builder-service.war'
+}
